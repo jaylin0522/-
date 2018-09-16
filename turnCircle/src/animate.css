@@ -1,0 +1,201 @@
+body {
+  font-size: 14px;
+  background: #ffd7d7;
+}
+.circle {
+  background: url(https://p5.ssl.qhimg.com/t01756f23395b060050.png) no-repeat;
+  background-size: cover;
+  width: 375px;
+  height: 375px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 4rem;
+}
+.wheel {
+  background: url(https://p1.ssl.qhimg.com/t01899c24e489f625dd.png) no-repeat;
+  background-size: cover;
+  width: 288px;
+  height: 288px;
+  margin: 70px auto 0;
+  position: relative;
+}
+.border {
+  background: url(https://p1.ssl.qhimg.com/t0136b42f6390277a68.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 288px;
+  height: 288px;
+}
+.core {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  width: 263px;
+  height: 263px;
+  margin: auto;
+  overflow: hidden;
+  background: url(https://p4.ssl.qhimg.com/t014d132ee0184b89f4.png) no-repeat;
+  background-size: cover;
+  transition: all 2s ease-out;
+}
+.core.default {
+  animation: turnCircle 16s linear infinite;
+}
+.core.rotate {
+  transform: rotate(1800deg);
+}
+.core.rotateThanks {
+  transform: rotate(1740deg)
+}
+.prize {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: right bottom;
+}
+.prize:nth-child(1) {
+  transform: rotate(30deg) skewY(30deg);
+}
+.prize:nth-child(2) {
+  transform: rotate(90deg) skewY(30deg);
+}
+.prize:nth-child(3) {
+  transform: rotate(150deg) skewY(30deg);
+}
+.prize:nth-child(4) {
+  transform: rotate(210deg) skewY(30deg);
+}
+.prize:nth-child(5) {
+  transform: rotate(270deg) skewY(30deg);
+}
+.prize:nth-child(6) {
+  transform: rotate(330deg) skewY(30deg);
+}
+
+.prize-dialog {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  left: 46px;
+  bottom: 8px;
+  transform: skewY(-30deg) rotate(-30deg);
+  text-align: center;
+}
+.prize-dialog p {
+  color: #63a0ab;
+  padding-top: 2px;
+  margin: 0;
+}
+.prize-dialog img {
+  width: 48px;
+}
+
+.start {
+  background: url(https://p0.ssl.qhimg.com/t017336a164d8c142ba.png) no-repeat;
+  background-size: cover;
+  width: 4.5rem;
+  height: 5.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.start .handImg {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.925rem;
+  right: 0;
+  bottom: -.7rem;
+  animation: guideHand 1.5s linear infinite;
+}
+
+.modal{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+}
+.modal-wrap {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  animation: showModal 1s ease-out;
+  animation-fill-mode: forwards;
+}
+.modal-top {
+  width: 25rem;
+  display: block;
+}
+.modal-bottom {
+  width: 25rem;
+  display: block;
+}
+.modal-detail {
+  position: absolute;
+  text-align: center;
+  top: 17.6rem;
+  width: 100%;
+}
+.modal-text1 {
+  font-size: 22px;
+  color: #fff;
+}
+.modal-text2 {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.modal-btn {
+  color: #9a0000;
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  background-image: url(https://p1.ssl.qhimg.com/t01bf49c50f2a2c0f63.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+  /* animation: showBtn 1s linear 1s infinite alternate; */
+}
+.modal-close {
+  width: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+}
+.modal-image {
+  position: absolute;
+  top: 7.3rem;
+  width: 20rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+@keyframes guideHand {
+  0%{opacity:1;-webkit-transform:scale(1,1);transform:scale(1,1)}
+  20%,80%{opacity:1;-webkit-transform:scale(.8,.8);transform:scale(.8,.8)}
+  100%{opacity:0;-webkit-transform:scale(.8,.8);transform:scale(.8,.8)}
+}
+@keyframes turnCircle {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+@keyframes showModal {
+  0% {transform: translate(-50%, -50%) scale(0);}
+  100% {transform: translate(-50%, -50%) scale(1);}
+}
+@keyframes showBtn {
+  0% {transform: scale(.88) translateZ(0);}
+  100% {transform: scale(1.07) translateZ(0);}
+}
