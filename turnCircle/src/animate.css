@@ -1,6 +1,6 @@
 body {
   font-size: 14px;
-  background: #ffd7d7;
+  background: #FFEA88;
 }
 .circle {
   background: url(https://p5.ssl.qhimg.com/t01756f23395b060050.png) no-repeat;
@@ -9,7 +9,7 @@ body {
   height: 375px;
   overflow: hidden;
   cursor: pointer;
-  margin-top: 4rem;
+  margin: 16rem auto 0;
 }
 .wheel {
   background: url(https://p1.ssl.qhimg.com/t01899c24e489f625dd.png) no-repeat;
@@ -180,6 +180,23 @@ body {
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+}
+
+.banner, .background {
+  width: 480px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.banner {
+  top: 0;
+}
+.background {
+  top: 192px;
+}
+.bg {
+  width: 1438px;
+  position: absolute;
 }
 
 @keyframes guideHand {

@@ -5,37 +5,48 @@ $(function() {
   var targetIndex = 0
   var targetUrl
   var isEmpty = false
+  var disabled = false
 
   var arrays = [
-    {url: 'http://mini.kkredian.xyz/7-05-MIN/11/ss5.html', id: 1},
-    {url: 'https://icash.baidu.com/cloan/operation/activity?activityName=channelBrand&CH=jmall&fr=rr3eJWop1', id: 2},
-    {url: 'https://www.rongshu.cn/promotion/m/1806cy4/index.html?c=ruidun2', id: 3},
-    {url: 'http://activity.vipkid.com.cn/signup?channel_id=14753433&sourceId=1075415&channel_keyword=1', id: 4},
-    {url: '16702.com', id: 5},
-    {url: 'https://mkt.360jie.com.cn/activity/ch/dqhd1/summer5', id: 6},
-    {url: 'https://ccshop.cib.com.cn:8010/application/cardapp/newfast/ApplyCard/toSelectCard?id=b28ebed5d52d477b9d66865809b1c44a', id: 7}
+    {url: 'http://mini.kkredian.xyz/7-05-MIN/11/ss5.html', id: 1, name: '免费阅读精彩小说'},
+    {url: 'https://icash.baidu.com/cloan/operation/activity?activityName=channelBrand&CH=jmall&fr=rr3eJWop1', id: 2, name: '最高借款20万'},
+    {url: 'http://activity.vipkid.com.cn/signup?channel_id=14753433&sourceId=1075415&channel_keyword=1', id: 3, name: '免费领取688元大礼包'},
+    {url: 'http://16702.com', id: 4, name: '马上赚钱，领取现金红包'},
+    {url: 'https://mkt.360jie.com.cn/activity/ch/dqhd1/summer5', id: 5, name: '免费借款30天'},
+    {url: 'https://ccshop.cib.com.cn:8010/application/cardapp/newfast/ApplyCard/toSelectCard?id=b28ebed5d52d477b9d66865809b1c44a', id: 6, name: '6积分兑换星巴克'},
+    {url: 'https://www.rongshu.cn/promotion/m/1806cy4/index.html?c=ruidun2', id: 7, name: '瞬间审批，无需担保'}
   ]
 
   $('.start').on('click', function () {
+    if (disabled) return
     $('.core').removeClass('default')
     setTimeout(() => {
+      disabled = true
       if (arrays.length > 0) {
         // 转盘旋转
+        _czc.push(["_trackEvent", 'circle', 'start', 'effective']);
         $('.core').addClass('rotate')
 
         // 设置相关图片
-        var random = Math.floor(Math.random() * arrays.length)
+        if (arrays.length > 1) {
+          var random = Math.floor(Math.random() * (arrays.length - 1))
+        } else {
+          var random = 0
+        }
         var splice = arrays.splice(random, 1)[0]
         targetIndex = splice.id
         targetUrl = splice.url
-        if (targetIndex === 7) {
-          $('.modal-image').attr('src', `../img/7.jpeg`)
+        console.log('index', targetIndex)
+        if (targetIndex === 6) {
+          $('.modal-image').attr('src', `../img/${targetIndex}.jpeg`)
         } else {
           $('.modal-image').attr('src', `../img/${targetIndex}.png`)
         }
+        $('.modal-text2').html(splice.name)
         // $('.times').html(arrays.length)
         isEmpty = false
       } else {
+        _czc.push(["_trackEvent", 'circle', 'start', 'empty']);
         $('.core').addClass('rotateThanks')
         $('.modal-image').attr('src', '../img/thanks.png')
         $('.modal-top').attr('src', 'https://p4.ssl.qhimg.com/t01d6616c26e50ebeb7.png')
@@ -50,6 +61,7 @@ $(function() {
         // } else {
         //   alert('thanks')
         // }
+        disabled= false
       }, 2000);
     }, 0)
   })
@@ -63,6 +75,7 @@ $(function() {
   })
   $('.modal-image, .modal-btn').on('click', function () {
     if (!isEmpty) {
+      _czc.push(["_trackEvent", 'circle', 'coupon', 'click']);
       window.location.href = targetUrl
     }
   })
