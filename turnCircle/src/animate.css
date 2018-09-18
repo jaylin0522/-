@@ -10,6 +10,8 @@ body {
   overflow: hidden;
   cursor: pointer;
   margin: 16rem auto 0;
+  position: relative;
+  transform: scale(1.1);
 }
 .wheel {
   background: url(https://p1.ssl.qhimg.com/t01899c24e489f625dd.png) no-repeat;

@@ -8,7 +8,7 @@ $(function() {
   var disabled = false
 
   var arrays = [
-    {url: 'http://mini.kkredian.xyz/7-05-MIN/11/ss5.html', id: 1, name: '免费阅读精彩小说'},
+    {url: 'http://mini.kkredian.xyz/7-05-MIN/yx1/1/ss4.html', id: 1, name: '免费阅读精彩小说'},
     {url: 'https://icash.baidu.com/cloan/operation/activity?activityName=channelBrand&CH=jmall&fr=rr3eJWop1', id: 2, name: '最高借款20万'},
     {url: 'http://activity.vipkid.com.cn/signup?channel_id=14753433&sourceId=1075415&channel_keyword=1', id: 3, name: '免费领取688元大礼包'},
     {url: 'http://16702.com', id: 4, name: '马上赚钱，领取现金红包'},
