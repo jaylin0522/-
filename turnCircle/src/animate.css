@@ -3,15 +3,14 @@ body {
   background: #FFEA88;
 }
 .circle {
-  background: url(https://p5.ssl.qhimg.com/t01756f23395b060050.png) no-repeat;
-  background-size: cover;
+  /* background: url(https://p5.ssl.qhimg.com/t01756f23395b060050.png) no-repeat; */
+  /* background-size: cover; */
   width: 375px;
   height: 375px;
   overflow: hidden;
   cursor: pointer;
-  margin: 16rem auto 0;
-  position: relative;
-  transform: scale(1.1);
+  margin: 14rem auto 0;
+  transform: scale(1.5);
 }
 .wheel {
   background: url(https://p1.ssl.qhimg.com/t01899c24e489f625dd.png) no-repeat;
