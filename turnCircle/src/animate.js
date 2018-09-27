@@ -75,6 +75,7 @@ $(function() {
   $('.modal-image, .modal-btn').on('click', function () {
     if (!isEmpty) {
       _czc.push(["_trackEvent", 'circle', `coupon_${targetIndex}`, 'click']);
+      _czc.push(["_trackEvent", 'circle', `coupon`, 'click']);
       window.location.href = targetUrl
     }
   })
