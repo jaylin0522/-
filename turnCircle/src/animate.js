@@ -9,7 +9,7 @@ $(function() {
 
   var arrays = [
     {url: 'http://mini.kkredian.xyz/7-05-MIN/yx1/1/ss4.html', id: 1, name: '免费阅读精彩小说'},
-    {url: 'https://icash.baidu.com/cloan/operation/activity?activityName=channelBrand&CH=jmall&fr=rr3eJWop1', id: 2, name: '最高借款20万'},
+    {url: 'https://icash.baidu.com/cloan/operation/activity?activityName=channelBrand&CH=jmall&fr=Rr3eJWop0', id: 2, name: '最高借款20万'},
     {url: 'http://activity.vipkid.com.cn/signup?channel_id=14753433&sourceId=1075415&channel_keyword=1', id: 3, name: '免费领取688元大礼包'},
     {url: 'http://16702.com', id: 4, name: '马上赚钱，领取现金红包'},
     {url: 'https://mkt.360jie.com.cn/activity/ch/dqhd1/summer5', id: 5, name: '免费借款30天'},
@@ -36,7 +36,6 @@ $(function() {
         var splice = arrays.splice(random, 1)[0]
         targetIndex = splice.id
         targetUrl = splice.url
-        console.log('index', targetIndex)
         if (targetIndex === 6) {
           $('.modal-image').attr('src', `../img/${targetIndex}.jpeg`)
         } else {
@@ -75,7 +74,7 @@ $(function() {
   })
   $('.modal-image, .modal-btn').on('click', function () {
     if (!isEmpty) {
-      _czc.push(["_trackEvent", 'circle', 'coupon', 'click']);
+      _czc.push(["_trackEvent", 'circle', `coupon_${targetIndex}`, 'click']);
       window.location.href = targetUrl
     }
   })
