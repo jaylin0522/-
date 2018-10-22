@@ -82,7 +82,7 @@ $(function() {
     if (!isEmpty) {
       _czc.push(["_trackEvent", 'circle', `coupon_${target.key}`, 'click']);
       _czc.push(["_trackEvent", 'circle', `coupon`, 'click']);
-      window.location.href = targetUrl
+      window.location.href = target.url
     }
   })
 })
