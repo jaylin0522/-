@@ -18,8 +18,8 @@ $(function() {
   var arrays = [
     {url: 'http://share.tuidoo.com/yoowoo', key: 'novel1', name: '海量小说免费阅读的机会'},
     {url: 'http://share.tuidoo.com/yoowoo/index2.html', key: 'novel2', name: '看小说赢红包的机会'},
-    {url: 'http://9.qqq5188.com', key: 'netProfit1', name: '坐在家里就能赚钱的秘籍'},
-    {url: 'http://9.qqq5188.com', key: 'netProfit2', name: '神秘赚钱机会'}
+    {url: 'http://w.rythb.com/zy', key: 'netProfit1', name: '坐在家里就能赚钱的秘籍'},
+    {url: 'http://w.rythb.com/zy', key: 'netProfit2', name: '神秘赚钱机会'}
   ]
 
   $('.start').on('click', function () {
